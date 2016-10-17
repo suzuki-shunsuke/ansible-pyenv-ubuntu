@@ -1,0 +1,18 @@
+galaxy_info:
+  author: Suzuki Shunsuke
+  description: Install pyenv and python build dependencies on Ubuntu
+  license: MIT
+  min_ansible_version: 1.2
+  github_branch: master
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+
+  galaxy_tags:
+  - python
+  - pyenv
+
+dependencies:
+- role: suzuki-shunsuke.ghq-module

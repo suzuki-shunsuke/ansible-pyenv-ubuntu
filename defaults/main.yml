@@ -1,0 +1,3 @@
+---
+# defaults file for pyenv-ubuntu
+pyenv_ghq_executable: ghq

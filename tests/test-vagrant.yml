@@ -1,0 +1,18 @@
+---
+- hosts: default
+  roles:
+  # - suzuki-shunsuke.go
+  - suzuki-shunsuke.go-module
+  tasks:
+  - name: Install ghq
+    go:
+      name: github.com/motemen/ghq
+      executable: /usr/local/go/bin/go
+    environment:
+      GOPATH: "{{ansible_env.HOME}}/.go"
+- hosts: default
+  vars:
+    pyenv_ghq_executable: "{{ansible_env.HOME}}/.go/bin/ghq"
+  roles:
+  - suzuki-shunsuke.ghq-module
+  - ansible-pyenv-ubuntu
