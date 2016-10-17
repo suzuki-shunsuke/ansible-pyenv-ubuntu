@@ -1,0 +1,3 @@
+---
+# vars file for pyenv-ubuntu
+pyenv_nonroot: "{{ (ansible_env.HOME == '/root') | ternary('no', 'yes') }}"

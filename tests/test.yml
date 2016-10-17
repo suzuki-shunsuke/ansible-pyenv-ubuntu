@@ -1,0 +1,30 @@
+---
+- hosts: localhost
+  connection: local
+  roles:
+  - suzuki-shunsuke.go
+  - suzuki-shunsuke.go-module
+  tasks:
+  - name: Install ghq
+    go:
+      name: github.com/motemen/ghq
+      executable: /usr/local/go/bin/go
+    environment:
+      GOPATH: "{{ansible_env.HOME}}/.go"
+- hosts: localhost
+  connection: local
+  vars:
+    pyenv_ghq_executable: "{{ansible_env.HOME}}/.go/bin/ghq"
+  roles:
+  - suzuki-shunsuke.ghq-module
+  - ansible-pyenv-ubuntu
+  tasks:
+  - name: Test pyenv version
+    shell: pyenv version
+    environment:
+      PYENV_ROOT: "{{ansible_env.HOME}}/.ghq/github.com/yyuu/pyenv"
+      PATH: "{{ansible_env.HOME}}/.ghq/github.com/yyuu/pyenv/bin:{{ansible_env.PATH}}"
+    changed_when: false
+    register: result
+  - debug:
+      var: result
