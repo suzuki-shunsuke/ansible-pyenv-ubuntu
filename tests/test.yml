@@ -17,7 +17,7 @@
     pyenv_ghq_executable: "{{ansible_env.HOME}}/.go/bin/ghq"
   roles:
   - suzuki-shunsuke.ghq-module
-  - suzuki-shunsuke.pyenv-ubuntu
+  - ansible-pyenv-ubuntu
   tasks:
   - name: Test pyenv version
     shell: pyenv version
