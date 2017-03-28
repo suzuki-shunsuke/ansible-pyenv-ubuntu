@@ -6,6 +6,11 @@ pyenv-ubuntu
 Install pyenv and python build dependencies on Ubuntu.
 This role uses the motemen/ghq.
 
+This role is Deprecated
+------------------------
+
+Please use [suzuki-shunsuke.pyenv](https://galaxy.ansible.com/suzuki-shunsuke/pyenv/) and [suzuki-shunsuke.pyenv-install-dep-ubuntu](https://galaxy.ansible.com/suzuki-shunsuke/pyenv-install-dep-ubuntu/)
+
 Requirements
 ------------
 
